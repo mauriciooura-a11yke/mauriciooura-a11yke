@@ -3,86 +3,241 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maurício Oura | Processos & Automação</title>
+    <title>Mauricio Massao Oura | Administrador & Estrategista</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --primary-color: #6e5494; /* Roxo para indicar criatividade e IA */
-            --text-color: #24292e;
-            --bg-color: #ffffff;
-            --secondary-bg: #f6f8fa;
+            --primary-color: #2c3e50;
+            --accent-color: #6e5494;
+            --text-light: #ecf0f1;
+            --text-dark: #24292e;
+            --bg-body: #f4f7f6;
         }
-        body { font-family: -apple-system, sans-serif; line-height: 1.6; color: var(--text-color); margin: 0; }
-        header { background: linear-gradient(135deg, #24292e 0%, #444d56 100%); color: white; padding: 3rem 1rem; text-align: center; }
-        .container { max-width: 850px; margin: 0 auto; padding: 2rem; }
-        .card { border: 1px solid #e1e4e8; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; transition: transform 0.2s; }
-        .card:hover { transform: translateY(-5px); border-color: var(--primary-color); }
-        .badge { background: #e1e4e8; padding: 5px 12px; border-radius: 15px; font-size: 0.85rem; font-weight: bold; }
-        .ia-badge { background: #d1f2ff; color: #0076a8; }
-        .btn { display: inline-block; background: var(--primary-color); color: white; padding: 10px 20px; text-decoration: none; border-radius: 6px; }
-        h2 { color: var(--primary-color); }
+
+        body { 
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+            line-height: 1.6; 
+            color: var(--text-dark); 
+            margin: 0; 
+            background-color: var(--bg-body);
+        }
+
+        .wrapper {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            min-height: 100vh;
+        }
+
+        aside {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 2rem 1.5rem;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid var(--accent-color);
+            margin-bottom: 1rem;
+            object-fit: cover;
+        }
+
+        .sidebar-section {
+            text-align: left;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+        }
+
+        .sidebar-section h3 {
+            border-bottom: 1px solid var(--accent-color);
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-size: 1rem;
+        }
+
+        main { padding: 2rem 3rem; }
+
+        header {
+            border-bottom: 3px solid var(--accent-color);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+        }
+
+        header h1 { margin: 0; font-size: 2.5rem; color: var(--primary-color); }
+        header p { margin: 5px 0 0; font-size: 1.2rem; font-weight: 500; color: var(--accent-color); }
+
+        section { margin-bottom: 2.5rem; }
+        h2 { color: var(--primary-color); display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
+        h2 i { color: var(--accent-color); }
+
+        .timeline-item {
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 2px solid var(--accent-color);
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            color: #34495e;
+        }
+
+        .job-title { color: var(--accent-color); font-weight: 600; display: block; margin-bottom: 5px; }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.2rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+        .card:hover { transform: translateY(-3px); }
+
+        .badge {
+            background: #eee;
+            color: #333;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin: 2px;
+            display: inline-block;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            padding: 8px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.85rem;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .wrapper { grid-template-columns: 1fr; }
+            main { padding: 1.5rem; }
+        }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Mauricio Massao Oura</h1>
-    <p><b>Otimização de Processos | Inteligência de Dados | Automação</b></p>
-</header>
+<div class="wrapper">
+    <aside>
+        <img src="https://github.com/mauriciooura-a11yke.png" alt="Mauricio Oura" class="profile-img">
+        
+        <div class="sidebar-section">
+            <h3>Contato</h3>
+            <p><i class="fas fa-envelope"></i> mauricio.oura@gmail.com</p>
+            <p><i class="fab fa-github"></i> mauriciooura-a11yke</p>
+        </div>
 
-<div class="container">
-    <section>
-        <h2>Visão Geral</h2>
-        <p>Administrador, especialista em mapeamento de fluxos com foco em transformar problemas complexos em soluções acessíveis. Não sou desenvolvedor de software por formação, mas sou um entusiasta da tecnologia que utiliza <b>Python e Google Apps Script potencializados por IA</b> para automatizar tarefas e <b>Google Data Studio</b> para dar vida aos dados.</p>
-    </section>
+        <div class="sidebar-section">
+            <h3>Idiomas</h3>
+            <p>Inglês (Avançado)</p>
+            <p>Espanhol (Avançado)</p>
+            <p>Japonês (Intermediário)</p>
+            <p>Francês (Básico)</p>
+        </div>
 
-    <section>
-        <h2>Minha Abordagem</h2>
-        <div class="card">
-            <h3>💡 Ideação e Mapeamento</h3>
-            <p>Identifico gargalos em fluxos burocráticos e desenho soluções que priorizam a acessibilidade da informação (a11y).</p>
+        <div class="sidebar-section">
+            <h3>Hard Skills</h3>
+            <span class="badge">Python + IA</span>
+            <span class="badge">Looker Studio / BI</span>
+            <span class="badge">Google Apps Script</span>
+            <span class="badge">Gestão de Riscos</span>
+            <span class="badge">Comércio Exterior</span>
+            <span class="badge">Sistema SEI!</span>
+            <span class="badge">Joomla / Linux</span>
         </div>
-        <div class="card">
-            <h3>🤖 Automação Inteligente</h3>
-            <p>Utilizo IA como aliada para desenvolver scripts em Python e Google Apps Script que eliminam tarefas repetitivas e aumentam a produtividade.</p>
-        </div>
-        <div class="card">
-            <h3>📊 Visualização de Dados</h3>
-            <p>Transformo planilhas em dashboards estratégicos no Google Data Studio.</p>
-        </div>
-    </section>
+    </aside>
 
-    <section>
-        <h2>Projetos de Destaque</h2>
-        <div class="card">
-            <h3>PORTAL DO CONHECIMENTO | PPGs - EFLCH-  (UNIFESP) </h3>
-            <p>Exemplo real de como estruturar e organizar o conhecimento gerado por vários Programas de Pós-Graduação. Os cards são criados automaticamente a partir de uma planilha Google, cujos dados são convertidos em arquivo json e transferidos via Google Apps Script para implementação no Github.</p>
-            <a href="https://mauriciooura-a11yke.github.io/ppgs-eflch/" class="btn">Explorar Projeto</a>
-        </div>
-        <div class="card">
-            <h3>PAINEL DE EXECUÇÃO ORÇAMENTÁRIA (UNIFESP) </h3>
-            <p>Painel público, elaborado a pedido da Pró-reitoria de Administração. Os dados são capturados automaticamente de arquivo anexo em Excel, recebido via Gmail do Tesouro Gerencial. A planilha é convertida automaticamente para Google Planilha. Em seguida, os dados são transformados e carregados no painel diariamente, sem intervenção humana.</p>
-            <a href="https://datastudio.google.com/u/0/reporting/2d004452-b28a-4809-bb74-dc3df62db6fc/page/p_gtv8qv5ckd" class="btn">Acessar Painel</a>
-        </div>
-        <div class="card">
-            <h3>PAINEL DE BANCAS DE QUALIFICAÇÃO E DEFESA (UNIFESP) </h3>
-            <p>Painel público, atualizado automaticamente a partir de planilha de controle de bancas do PPG em Educação.</p>
-            <a href="https://datastudio.google.com/u/0/reporting/322acdc7-ed75-4c08-8a70-a9c9cbf9c33c/page/rUZxF" class="btn">Acessar Painel</a>
-        </div>
-    </section>
+    <main>
+        <header>
+            <h1>Mauricio Massao Oura</h1>
+            <p>Doutor em Administração | Especialista em Processos e Automação</p>
+        </header>
 
-    <section>
-        <h2>Habilidades & Ferramentas</h2>
-        <p>
-            <span class="badge">Mapeamento de Processos</span>
-            <span class="badge">Google Data Studio</span>
-            <span class="badge ia-badge">Google Apps Script + IA (OpenAI/Gemini)</span>  
-            <span class="badge ia-badge">Python + IA (OpenAI/Gemini)</span>        
-        </p>
-    </section>
+        <section>
+            <h2><i class="fas fa-user-tie"></i> Sobre Mim</h2>
+            <p>Administrador e Servidor Público Federal com sólida experiência na estruturação de setores de TI, Importação e Secretarias Acadêmicas[cite: 10, 28, 29]. Especialista em <b>estratégia e gestão baseada em riscos</b>, utilizo a tecnologia para transformar burocracia em fluxos eficientes e acessíveis[cite: 12, 19, 31].</p>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-briefcase"></i> Experiência Profissional</h2>
+            
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <span>UNIFESP - Campus Guarulhos</span>
+                    <span>2018 - Atual</span>
+                </div>
+                <span class="job-title">Administrador / Chefe de TI / Secretário de PPG</span>
+                <p>Implementou melhorias com foco em gestão de riscos[cite: 12]. Atuou como Coordenador do Observatório Institucional e na chefia da Secretaria Integrada de Cursos[cite: 13, 14]. Atualmente é Secretário do PPG em Educação e Bolsista de Extensão em Apoio de TI[cite: 15, 16].</p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <span>UFABC</span>
+                    <span>2010 - 2018</span>
+                </div>
+                <span class="job-title">Administrador / Chefe de Importação</span>
+                <p>Responsável pela redução de prazos e custos na área de importação e pioneiro na Gestão Baseada em Riscos[cite: 30, 31]. Coordenou a criação da página da Pró-reitoria de Administração[cite: 31].</p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <span>Docência Universitária</span>
+                    <span>2007 - 2015</span>
+                </div>
+                <span class="job-title">Professor de Pós e Graduação (SENAC, UNIP, Torricelli)</span>
+                <p>Ministrou disciplinas de Gestão Internacional, Comércio Exterior e Técnicas de Negociação[cite: 34, 35, 37, 38].</p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <span>Cia. Lilla de Máquinas</span>
+                    <span>2001 - 2010</span>
+                </div>
+                <span class="job-title">Analista de Exportação Sênior</span>
+                <p>Trajetória iniciada como estagiário, chegando ao nível sênior com vasta atuação em cálculos de projetos, vendas internacionais e supervisão de faturamento[cite: 40, 42, 43].</p>
+            </div>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-project-diagram"></i> Projetos em Destaque</h2>
+            
+            <div class="card">
+                <h3>Portal do Conhecimento (PPGs - EFLCH)</h3>
+                <p>Automação completa: dados de planilhas Google convertidos em JSON via Apps Script e implementados no GitHub[cite: 11].</p>
+                <a href="https://mauriciooura-a11yke.github.io/ppgs-eflch/" class="btn" target="_blank">Explorar Projeto</a>
+            </div>
+
+            <div class="card">
+                <h3>Painel de Execução Orçamentária</h3>
+                <p>Captura automática de dados do Tesouro Gerencial (Gmail/Excel) para Google Planilhas e Looker Studio sem intervenção humana[cite: 14].</p>
+                <a href="https://datastudio.google.com/u/0/reporting/2d004452-b28a-4809-bb74-dc3df62db6fc/page/p_gtv8qv5ckd" class="btn" target="_blank">Acessar Painel</a>
+            </div>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-graduation-cap"></i> Formação Acadêmica</h2>
+            <p><b>Doutorado em Administração (Foco em Estratégia)</b> - Uninove, SP [cite: 21]</p>
+            <p><b>Mestrado em Administração</b> - Uninove, SP [cite: 21]</p>
+            <p><b>Bacharelado em Adm. com Hab. em Comércio Exterior</b> - Torricelli, SP [cite: 21, 22]</p>
+            <p><b>Liderança Estratégica</b> - Fundação Getúlio Vargas (FGV/SP) [cite: 19]</p>
+        </section>
+    </main>
 </div>
 
 <footer>
-    <p style="text-align: center; color: #888;">"Transformando ideias em fluxos eficientes."</p>
+    <p style="text-align: center; padding: 1rem; color: #777; font-size: 0.8rem;">
+        &copy; 2026 Mauricio Massao Oura - Transformando dados em decisões.
+    </p>
 </footer>
 
 </body>
