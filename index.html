@@ -3,222 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mauricio Massao Oura | Especialista em Automação</title>
+    <title>Mauricio Massao Oura | Administrador & Estrategista</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --primary-gradient: linear-gradient(135deg, #2c3e50 0%, #4b6584 100%);
+            --primary-color: #2c3e50;
             --accent-color: #6e5494;
-            --accent-hover: #8e44ad;
             --text-dark: #2d3436;
             --text-muted: #636e72;
             --bg-body: #f8f9fa;
             --white: #ffffff;
-            --transition: all 0.3s ease;
         }
 
         body { 
-            font-family: 'Inter', 'Segoe UI', Roboto, sans-serif; 
-            line-height: 1.6; 
+            font-family: 'Inter', 'Segoe UI', sans-serif; 
+            line-height: 1.5; 
             color: var(--text-dark); 
             margin: 0; 
-            padding: 0;
             background-color: var(--bg-body);
         }
 
         .cv-container {
-            max-width: 950px;
-            margin: 3rem auto;
+            max-width: 900px;
+            margin: 2rem auto;
             background: var(--white);
-            padding: 4rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            border-radius: 16px;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
         }
 
-        /* Cabeçalho Moderno */
+        /* CABEÇALHO */
         header {
             text-align: center;
-            margin-bottom: 3rem;
-            padding-bottom: 2rem;
-            border-bottom: 2px solid #eee;
+            border-bottom: 2px solid var(--accent-color);
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
         }
 
         header h1 { 
             margin: 0; 
-            font-size: 3rem; 
-            background: var(--primary-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: -1px;
+            font-size: 2.5rem; 
+            color: var(--primary-color);
         }
 
         header p.subtitle { 
-            margin: 10px 0 20px; 
-            font-size: 1.4rem; 
-            font-weight: 400; 
-            color: var(--accent-color); 
+            margin: 5px 0 15px; 
+            font-size: 1.2rem; 
+            color: var(--accent-color);
+            font-weight: 600;
         }
         
         .contact-info {
             display: flex;
             justify-content: center;
-            gap: 25px;
+            gap: 20px;
             flex-wrap: wrap;
+            font-size: 0.9rem;
         }
 
-        .contact-info a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
+        .contact-info a { color: var(--text-dark); text-decoration: none; }
 
-        .contact-info a:hover { color: var(--accent-color); transform: translateY(-2px); }
-
-        /* Seções Gerais */
-        section { margin-bottom: 3.5rem; }
+        /* SEÇÕES */
+        section { margin-bottom: 2rem; page-break-inside: avoid; }
         
         h2 { 
-            color: var(--text-dark); 
+            color: var(--primary-color); 
             display: flex; 
             align-items: center; 
-            gap: 12px; 
-            margin-bottom: 1.5rem;
-            font-size: 1.3rem;
+            gap: 10px; 
+            border-bottom: 1px solid #eee; 
+            padding-bottom: 5px;
+            font-size: 1.2rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
         }
 
         h2 i { color: var(--accent-color); }
 
-        /* Badges Interativos (Skills e Idiomas) */
-        .badge-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
+        /* SKILLS E IDIOMAS */
+        .grid-skills { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .badge-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 5px; }
+        
         .badge {
             background: #f1f2f6;
-            color: var(--text-dark);
-            padding: 8px 16px;
-            border-radius: 50px;
-            font-size: 0.85rem;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 0.8rem;
             font-weight: 500;
-            transition: var(--transition);
-            border: 1px solid transparent;
-            cursor: default;
+            transition: 0.3s;
+            border: 1px solid #ddd;
         }
 
-        /* Efeito de mudança de cor ao selecionar/passar mouse */
         .badge:hover {
             background: var(--accent-color);
-            color: var(--white);
-            transform: scale(1.05);
-            box-shadow: 0 4px 10px rgba(110, 84, 148, 0.3);
-        }
-
-        .badge.lang:hover {
-            background: #2c3e50;
-        }
-
-        /* Experiência e Formação */
-        .item-box {
-            margin-bottom: 2rem;
-            padding: 1.5rem;
-            border-radius: 12px;
-            transition: var(--transition);
-            border: 1px solid transparent;
-        }
-
-        .item-box:hover {
-            background: #fcfcfd;
-            border-color: #eee;
-            box-shadow: 4px 4px 15px rgba(0,0,0,0.02);
-        }
-
-        .item-header {
-            display: flex;
-            justify-content: space-between;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 5px;
-        }
-
-        .item-title { 
-            color: var(--accent-color); 
-            font-weight: 600; 
-            display: block;
-            font-size: 1.05rem;
-        }
-
-        /* Cards de Projetos (Último Bloco) */
-        .project-card {
-            background: #ffffff;
-            border-radius: 12px;
-            padding: 2rem;
-            margin-bottom: 1.5rem;
-            border: 1px solid #e1e4e8;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .project-card::before {
-            content: "";
-            position: absolute;
-            left: 0; top: 0; bottom: 0;
-            width: 4px;
-            background: var(--accent-color);
-            transition: var(--transition);
-        }
-
-        .project-card:hover {
-            transform: translateX(10px);
-            border-color: var(--accent-color);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-        }
-
-        .project-card:hover::before {
-            width: 8px;
-            background: var(--accent-hover);
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--primary-gradient);
             color: white;
-            padding: 10px 20px;
+            border-color: var(--accent-color);
+        }
+
+        /* EXPERIÊNCIA E ITENS */
+        .item { margin-bottom: 1.5rem; }
+        .item-header { display: flex; justify-content: space-between; font-weight: bold; }
+        .item-title { color: var(--accent-color); display: block; margin-bottom: 5px; }
+
+        /* PROJETOS (MODO "SAIBA MAIS") */
+        .project-card {
+            background: #fafafa;
+            padding: 1.2rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .btn-link {
+            display: inline-block;
+            margin-top: 8px;
+            color: var(--accent-color);
             text-decoration: none;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            margin-top: 15px;
-            transition: var(--transition);
-        }
-
-        .btn:hover {
-            opacity: 0.9;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        footer {
-            text-align: center;
-            padding-bottom: 3rem;
-            color: var(--text-muted);
+            font-weight: 600;
             font-size: 0.85rem;
+        }
+
+        .btn-link:hover { text-decoration: underline; }
+
+        /* AJUSTES PARA IMPRESSÃO - RESOLVE O SEU PROBLEMA */
+        @media print {
+            body { background: white; }
+            .cv-container { margin: 0; padding: 0; box-shadow: none; max-width: 100%; }
+            header h1 { color: black !important; -webkit-print-color-adjust: exact; }
+            header { border-bottom: 2px solid #6e5494 !important; }
+            .badge { border: 1px solid #ccc !important; color: black !important; }
+            .btn-link { color: #6e5494 !important; text-decoration: underline; }
+            section { page-break-inside: avoid; } /* Evita quebrar parágrafos */
+            footer { display: none; }
         }
 
         @media (max-width: 768px) {
-            .cv-container { margin: 1rem; padding: 2rem; }
-            .item-header { flex-direction: column; }
-            header h1 { font-size: 2.2rem; }
+            .grid-skills { grid-template-columns: 1fr; }
+            .cv-container { padding: 1.5rem; }
         }
     </style>
 </head>
@@ -227,104 +147,91 @@
 <div class="cv-container">
     <header>
         <h1>Mauricio Massao Oura</h1>
-        <p class="subtitle">Doutor em Administração | Estrategista em Processos e Automação</p>
-        
+        <p class="subtitle">Doutor em Administração | Especialista em Processos e Automação</p>
         <div class="contact-info">
             <a href="mailto:mauricio.oura@gmail.com"><i class="fas fa-envelope"></i> mauricio.oura@gmail.com</a>
-            <a href="https://github.com/mauriciooura-a11yke" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-            <a href="#"><i class="fas fa-map-marker-alt"></i> Guarulhos, SP</a>
+            <a href="https://github.com/mauriciooura-a11yke"><i class="fab fa-github"></i> GitHub</a>
+            <span><i class="fas fa-map-marker-alt"></i> Guarulhos, SP</span>
         </div>
     </header>
 
     <section>
-        <h2><i class="fas fa-bolt"></i> Resumo Profissional</h2>
-        <p>Administrador e Servidor Público Federal com sólida experiência na estruturação de setores de TI, Importação e Secretarias Acadêmicas. Especialista em estratégia e gestão baseada em riscos, utilizo a tecnologia para transformar burocracia em fluxos eficientes e acessíveis.</p>
+        <h2><i class="fas fa-user-tie"></i> Resumo Profissional</h2>
+        <p>Administrador e Servidor Público Federal com vasta experiência na modernização de processos e gestão de riscos. Especialista em utilizar tecnologia (IA, Python, Google Apps Script) para transformar fluxos burocráticos em sistemas eficientes.</p>
     </section>
 
     <section>
         <h2><i class="fas fa-graduation-cap"></i> Formação Acadêmica</h2>
-        <div class="item-box">
-            <div class="item-header"><span>Doutorado em Administração</span><span>Uninove, SP</span></div>
-            <div class="item-header"><span>Mestrado em Administração</span><span>Uninove, SP</span></div>
-            <div class="item-header"><span>Bacharelado em Administração (Comex)</span><span>Torricelli, SP</span></div>
+        <div class="item">
+            <div class="item-header"><span>Doutorado e Mestrado em Administração</span><span>Uninove, SP</span></div>
+            <div class="item-header"><span>Bacharelado em Administração (Comércio Exterior)</span><span>Torricelli, SP</span></div>
             <div class="item-header"><span>Certificação em Liderança Estratégica</span><span>FGV/SP</span></div>
         </div>
     </section>
 
-    <section>
-        <h2><i class="fas fa-rocket"></i> Habilidades Estratégicas</h2>
-        <div class="badge-grid">
-            <span class="badge">Python + IA</span>
-            <span class="badge">Google Data Studio / BI</span>
-            <span class="badge">Google Apps Script + IA</span>
-            <span class="badge">Gestão de Riscos</span>
-            <span class="badge">Comércio Exterior</span>
-            <span class="badge">Sistema SEI!</span>
-            <span class="badge">Joomla</span>
-            <span class="badge">Linux</span>
-        </div>
-    </section>
+    <div class="grid-skills">
+        <section>
+            <h2><i class="fas fa-tools"></i> Hard Skills</h2>
+            <div class="badge-grid">
+                <span class="badge">Python + IA</span>
+                <span class="badge">BI & Looker Studio</span>
+                <span class="badge">Google Apps Script</span>
+                <span class="badge">Gestão de Riscos</span>
+                <span class="badge">Sistema SEI!</span>
+            </div>
+        </section>
+        <section>
+            <h2><i class="fas fa-language"></i> Idiomas</h2>
+            <div class="badge-grid">
+                <span class="badge">Inglês (Avançado)</span>
+                <span class="badge">Espanhol (Avançado)</span>
+                <span class="badge">Japonês (Intermediário)</span>
+            </div>
+        </section>
+    </div>
 
     <section>
-        <h2><i class="fas fa-language"></i> Idiomas</h2>
-        <div class="badge-grid">
-            <span class="badge lang">Inglês (Avançado)</span>
-            <span class="badge lang">Espanhol (Avançado)</span>
-            <span class="badge lang">Japonês (Intermediário)</span>
-            <span class="badge lang">Francês (Básico)</span>
+        <h2><i class="fas fa-book"></i> Produção Intelectual & Destaques</h2>
+        <div class="item">
+            <span class="item-title">E-book: História e Memória do Campus Guarulhos</span>
+            <p>Obra documental desenvolvida durante a coordenação do Observatório Institucional da EFLCH, resgatando a trajetória da unidade.</p>
         </div>
     </section>
 
     <section>
         <h2><i class="fas fa-briefcase"></i> Experiência Profissional</h2>
-        
-        <div class="item-box">
-            <div class="item-header">
-                <span>UNIFESP</span>
-                <span>2018 - Atual</span>
-            </div>
+        <div class="item">
+            <div class="item-header"><span>UNIFESP</span><span>2018 - Atual</span></div>
             <span class="item-title">Administrador / Chefe de TI / Secretário de PPG</span>
-            <p>Implementou melhorias com foco em gestão de riscos. Foi Coordenador do Observatório Institucional (EFLCH) e Chefe da Secretaria Integrada. Atualmente Secretário do PPG em Educação e Bolsista de TI no ProLEEI/MEC.</p>
+            <p>Liderança na estruturação do setor de TI e Secretarias Acadêmicas. Implementação de automações para gestão de bolsas e processos seletivos.</p>
         </div>
-
-        <div class="item-box">
-            <div class="item-header">
-                <span>UFABC</span>
-                <span>2010 - 2018</span>
-            </div>
+        <div class="item">
+            <div class="item-header"><span>UFABC</span><span>2010 - 2018</span></div>
             <span class="item-title">Administrador / Chefe de Importação</span>
-            <p>Responsável pela redução de prazos e custos na área de importação. Pioneiro na implementação da Gestão Baseada em Riscos na área governamental.</p>
-        </div>
-
-        <div class="item-box">
-            <div class="item-header">
-                <span>CIA. LILLA DE MÁQUINAS</span>
-                <span>2001 - 2010</span>
-            </div>
-            <span class="item-title">Analista de Exportação Sênior</span>
-            <p>Atuação sólida em cálculo de projetos internacionais, supervisão de faturamento e prospecção de mercados.</p>
+            <p>Pioneiro na implementação da Gestão de Riscos na importação científica, otimizando recursos e prazos.</p>
         </div>
     </section>
 
     <section>
-        <h2><i class="fas fa-code-branch"></i> Projetos em Destaque</h2>
+        <h2><i class="fas fa-layer-group"></i> Portfólio de Soluções</h2>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 15px;">Acesse os links abaixo para visualizar os detalhes técnicos de cada implementação:</p>
         
         <div class="project-card">
-            <h3>Portal do Conhecimento (PPGs - EFLCH)</h3>
-            <p>Automação que converte planilhas Google em JSON via Apps Script e publica no GitHub Pages automaticamente. Organização inteligente de dados acadêmicos.</p>
-            <a href="https://mauriciooura-a11yke.github.io/ppgs-eflch/" class="btn" target="_blank"><i class="fas fa-external-link-alt"></i> Visualizar Projeto</a>
+            <strong>Portal do Conhecimento (PPGs)</strong>
+            <p>Ecossistema que integra Google Sheets ao GitHub Pages para transparência acadêmica.</p>
+            <a href="https://mauriciooura-a11yke.github.io/ppgs-eflch/" class="btn-link" target="_blank">Ver detalhes do projeto →</a>
         </div>
 
         <div class="project-card">
-            <h3>Painel de Execução Orçamentária</h3>
-            <p>Pipeline de dados: extração do Tesouro Gerencial → Python → Looker Studio. Atualização diária sem intervenção humana para suporte à decisão.</p>
-            <a href="https://datastudio.google.com/u/0/reporting/2d004452-b28a-4809-bb74-dc3df62db6fc" class="btn" target="_blank"><i class="fas fa-chart-pie"></i> Acessar Dashboard</a>
+            <strong>Painel de Execução Orçamentária</strong>
+            <p>Automação completa entre Tesouro Gerencial e Looker Studio via Python.</p>
+            <a href="https://datastudio.google.com/u/0/reporting/2d004452-b28a-4809-bb74-dc3df62db6fc" class="btn-link" target="_blank">Acessar dashboard interativo →</a>
         </div>
     </section>
 </div>
 
-<footer>
-    <p>&copy; 2026 Mauricio Massao Oura - Inovação em Gestão Pública.</p>
+<footer style="text-align: center; padding: 2rem; color: #999; font-size: 0.8rem;">
+    Versão digital otimizada. Pressione Ctrl+P para salvar como PDF.
 </footer>
 
 </body>
