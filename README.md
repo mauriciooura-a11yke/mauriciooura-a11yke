@@ -8,10 +8,10 @@ Para visualizar meu currículo em formato de página web, acesse:
 Lá poderá visualizar alguns de meus projetos.
 
 ## 🚀 Sobre Mim
-Sou um profissional focado na otimização de fluxos e democratização da informação. Utilizo **Python e Google Apps Script potencializados por IA** para criar automações que resolvem problemas reais e o **Google Data Studio** para visualização de dados estratégica.
+Sou um profissional focado na otimização de fluxos e democratização da informação. Utilizo **Python, Google Apps Script e Google Data Studio, potencializados por IA** para criar automações que resolvem problemas reais.
 
 ## 🛠 Principais Competências
-- Mapeamento de Processos e Fluxogramas.
+- Mapeamento de Processos.
 - Acessibilidade de Informação (a11y).
 - Automação de tarefas repetitivas.
 - Desenvolvimento de Dashboards dinâmicos.
