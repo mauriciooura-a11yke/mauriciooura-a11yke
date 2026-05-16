@@ -9,7 +9,7 @@
         :root {
             --primary-color: #f1f5f9; /* Texto claro principal */
             --accent-color: #3b82f6;  /* Azul elétrico clássico */
-            --accent-glow: rgba(59, 130, 246, 0.5);
+            --accent-glow: rgba(59, 130, 246, 0.5); /* Sombra para o efeito de acender LED azul */
             --text-dark: #f8fafc;
             --text-muted: #94a3b8;    /* Texto secundário discreto no fundo escuro */
             --bg-body: #0f172a;       /* Fundo escuro profundo / quase preto moderno */
@@ -31,13 +31,13 @@
             background-attachment: fixed;
         }
 
-        /* BARRA DE PROGRESSO DE LEITURA (Estilo LED) */
+        /* BARRA DE PROGRESSO DE LEITURA (Estilo LED Azul) */
         .progress-bar {
             position: fixed;
             top: 0;
             left: 0;
             height: 4px;
-            background: linear-gradient(90deg, var(--accent-color), #c084fc);
+            background: linear-gradient(90deg, var(--accent-color), #60a5fa);
             box-shadow: 0 0 10px var(--accent-glow);
             width: 0%;
             z-index: 1000;
@@ -90,8 +90,8 @@
             margin: 5px 0 15px; 
             font-size: 1.2rem; 
             font-weight: 500; 
-            color: #c084fc; 
-            text-shadow: 0 0 8px rgba(192, 132, 252, 0.3);
+            color: #60a5fa; 
+            text-shadow: 0 0 8px rgba(96, 165, 250, 0.3);
         }
         
         .contact-info {
@@ -109,7 +109,7 @@
         }
         
         .contact-info a:hover {
-            color: #c084fc;
+            color: #60a5fa;
             text-shadow: 0 0 8px var(--accent-glow);
         }
 
@@ -159,13 +159,13 @@
             color: #fff; 
         }
         .job-title { 
-            color: #c084fc; 
+            color: #60a5fa; 
             font-weight: 600; 
             display: block; 
             margin-bottom: 5px; 
         }
 
-        /* BADGES (Efeito de Acender LED ao passar o mouse) */
+        /* BADGES (Efeito de Acender LED Azul ao passar o mouse) */
         .badge-grid { 
             display: flex; 
             flex-wrap: wrap; 
@@ -187,13 +187,12 @@
         .badge:hover {
             background: var(--accent-color) !important;
             color: #fff !important;
-            border-color: #c084fc !important;
+            border-color: #60a5fa !important;
             transform: translateY(-2px);
-            /* EFEITO LED GLOW */
             box-shadow: 0 0 14px var(--accent-glow), 0 0 4px var(--accent-color);
         }
 
-        /* CARDS DE PROJETOS INTERATIVOS (Efeito LED de Fundo) */
+        /* CARDS DE PROJETOS INTERATIVOS (Efeito LED de Fundo Azul) */
         .card {
             background: rgba(255, 255, 255, 0.02);
             border-radius: 8px;
@@ -209,9 +208,8 @@
         .card:hover {
             transform: translateY(-4px);
             background: rgba(255, 255, 255, 0.05);
-            border-color: rgba(168, 85, 247, 0.4);
+            border-color: rgba(59, 130, 246, 0.4);
             border-left-width: 5px;
-            /* EFEITO LED GLOW COMPLETO NO CARD */
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 0 15px -2px var(--accent-glow);
         }
 
@@ -220,11 +218,11 @@
             color: #fff;
         }
 
-        /* EFEITO NEON NOS LINKS */
+        /* CORREÇÃO DO LINK: AGORA 100% AZUL ELÉTRICO E NEON */
         .btn-link {
             display: inline-block;
             margin-top: 5px;
-            color: #c084fc;
+            color: #60a5fa !important; /* Força o tom azul claro contrastante para os links */
             text-decoration: none;
             font-weight: 600;
             position: relative;
@@ -247,7 +245,8 @@
         }
 
         .btn-link:hover {
-            color: #fff;
+            color: #fff !important;
+            text-shadow: 0 0 8px var(--accent-glow);
         }
 
         .btn-link:hover::after {
@@ -261,17 +260,17 @@
             .progress-bar { display: none; }
             .cv-container { margin: 0; padding: 0; box-shadow: none; max-width: 100%; animation: none !important; background: transparent !important; border: none !important; }
             header h1 { color: #2c3e50 !important; text-shadow: none !important; }
-            header p.subtitle { color: #6e5494 !important; text-shadow: none !important; }
-            header { border-bottom: 3px solid #6e5494 !important; box-shadow: none !important; }
+            header p.subtitle { color: #1e3a8a !important; text-shadow: none !important; }
+            header { border-bottom: 3px solid #3b82f6 !important; box-shadow: none !important; }
             h2 { border-bottom: 1px solid #ccc !important; color: #2c3e50 !important; }
-            h2 i { color: #6e5494 !important; }
+            h2 i { color: #3b82f6 !important; }
             h2:hover i { animation: none !important; text-shadow: none !important; }
             .item-header { color: #2c3e50 !important; }
-            .job-title { color: #6e5494 !important; }
+            .job-title { color: #1e3a8a !important; }
             .badge { border: 1px solid #ccc !important; color: black !important; background: transparent !important; backdrop-filter: none !important; transform: none !important; box-shadow: none !important; }
-            .card { transform: none !important; box-shadow: none !important; background: transparent !important; border: 1px solid #ccc !important; border-left: 5px solid #6e5494 !important; color: #24292e !important; }
+            .card { transform: none !important; box-shadow: none !important; background: transparent !important; border: 1px solid #ccc !important; border-left: 5px solid #3b82f6 !important; color: #24292e !important; }
             .card h3 { color: #2c3e50 !important; }
-            .btn-link { color: #6e5494 !important; text-decoration: underline !important; }
+            .btn-link { color: #1e3a8a !important; text-decoration: underline !important; }
             .btn-link::after { display: none; }
             .contact-info a { color: #2c3e50 !important; }
             small { color: #636e72 !important; }
@@ -290,7 +289,6 @@
 </head>
 <body>
 
-<!-- Elemento da barra de progresso -->
 <div class="progress-bar" id="scrollProgress"></div>
 
 <div class="cv-container">
