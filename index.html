@@ -7,12 +7,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --primary-color: #2c3e50;
-            --accent-color: #6e5494;
-            --text-dark: #24292e;
-            --text-muted: #636e72;
-            --bg-body: #f8fafc;
-            --white: #ffffff;
+            --primary-color: #f1f5f9; /* Texto claro principal */
+            --accent-color: #a855f7;  /* Roxo neon para os LEDs e detalhes */
+            --accent-glow: rgba(168, 85, 247, 0.6); /* Sombra para o efeito de acender LED */
+            --text-dark: #f8fafc;
+            --text-muted: #94a3b8;    /* Texto secundário discreto no fundo escuro */
+            --bg-body: #0f172a;       /* Fundo escuro profundo / quase preto moderno */
+            --card-bg: #1e293b;       /* Fundo dos cards e container */
+            --white: #1e293b;
             --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -23,19 +25,20 @@
         body { 
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
             line-height: 1.6; 
-            color: var(--text-dark); 
+            color: var(--primary-color); 
             margin: 0; 
-            background: linear-gradient(135deg, #f4f7f6 0%, #eef2f7 100%);
+            background: linear-gradient(135deg, #090d16 0%, #0f172a 100%);
             background-attachment: fixed;
         }
 
-        /* BARRA DE PROGRESSO DE LEITURA */
+        /* BARRA DE PROGRESSO DE LEITURA (Estilo LED) */
         .progress-bar {
             position: fixed;
             top: 0;
             left: 0;
             height: 4px;
-            background: linear-gradient(90deg, var(--accent-color), #9b59b6);
+            background: linear-gradient(90deg, var(--accent-color), #c084fc);
+            box-shadow: 0 0 10px var(--accent-glow);
             width: 0%;
             z-index: 1000;
             transition: width 0.1s ease;
@@ -44,12 +47,13 @@
         .cv-container {
             max-width: 900px;
             margin: 3rem auto;
-            background: var(--white);
+            background: var(--card-bg);
             padding: 3rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
             border-radius: 12px;
             position: relative;
             overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
             animation: slideUp 0.8s var(--transition-smooth) forwards;
         }
 
@@ -71,20 +75,23 @@
             margin-bottom: 2rem;
             padding-bottom: 1.5rem;
             position: relative;
+            box-shadow: 0 4px 20px -10px var(--accent-glow);
         }
 
         header h1 { 
             margin: 0; 
             font-size: 2.5rem; 
-            color: var(--primary-color);
+            color: #fff;
             letter-spacing: -0.5px;
+            text-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
         }
         
         header p.subtitle { 
             margin: 5px 0 15px; 
             font-size: 1.2rem; 
             font-weight: 500; 
-            color: var(--accent-color); 
+            color: #c084fc; 
+            text-shadow: 0 0 8px rgba(192, 132, 252, 0.3);
         }
         
         .contact-info {
@@ -98,11 +105,12 @@
         .contact-info a { 
             color: var(--primary-color); 
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
         }
         
         .contact-info a:hover {
-            color: var(--accent-color);
+            color: #c084fc;
+            text-shadow: 0 0 8px var(--accent-glow);
         }
 
         /* SEÇÕES */
@@ -112,11 +120,11 @@
         }
         
         h2 { 
-            color: var(--primary-color); 
+            color: #fff; 
             display: flex; 
             align-items: center; 
             gap: 10px; 
-            border-bottom: 1px solid #e2e8f0; 
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
             padding-bottom: 8px;
             font-size: 1.35rem;
             text-transform: uppercase;
@@ -125,7 +133,8 @@
 
         h2:hover i {
             animation: iconBounce 0.5s var(--transition-smooth);
-            color: var(--primary-color);
+            color: #fff;
+            text-shadow: 0 0 10px var(--accent-glow);
         }
 
         @keyframes iconBounce {
@@ -135,7 +144,7 @@
 
         h2 i { 
             color: var(--accent-color); 
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         /* EXPERIÊNCIA E FORMAÇÃO */
@@ -147,16 +156,16 @@
             display: flex; 
             justify-content: space-between; 
             font-weight: bold; 
-            color: var(--primary-color); 
+            color: #fff; 
         }
         .job-title { 
-            color: var(--accent-color); 
+            color: #c084fc; 
             font-weight: 600; 
             display: block; 
             margin-bottom: 5px; 
         }
 
-        /* BADGES (Estilo unificado para Hard e Soft Skills) */
+        /* BADGES (Efeito de Acender LED ao passar o mouse) */
         .badge-grid { 
             display: flex; 
             flex-wrap: wrap; 
@@ -165,61 +174,62 @@
         }
         
         .badge {
-            background: rgba(240, 242, 245, 0.75);
-            backdrop-filter: blur(4px);
-            -webkit-backdrop-filter: blur(4px);
-            color: var(--primary-color);
+            background: rgba(255, 255, 255, 0.05);
+            color: #e2e8f0;
             padding: 4px 10px;
             border-radius: 6px;
             font-size: 0.8rem;
             font-weight: 500;
-            border: 1px solid rgba(209, 216, 224, 0.6);
-            transition: all 0.4s var(--transition-smooth);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s var(--transition-smooth);
         }
 
         .badge:hover {
-            background: var(--accent-color) !important; /* Força a cor padrão ao passar o mouse */
-            color: white !important;
-            border-color: var(--accent-color) !important;
+            background: var(--accent-color) !important;
+            color: #fff !important;
+            border-color: #c084fc !important;
             transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(110, 84, 148, 0.2);
+            /* EFEITO LED GLOW */
+            box-shadow: 0 0 14px var(--accent-glow), 0 0 4px var(--accent-color);
         }
 
-        /* CARDS DE PROJETOS INTERATIVOS */
+        /* CARDS DE PROJETOS INTERATIVOS (Efeito LED de Fundo) */
         .card {
-            background: #fafbfc;
+            background: rgba(255, 255, 255, 0.02);
             border-radius: 8px;
             padding: 1.5rem;
             margin-bottom: 1.2rem;
             border-left: 5px solid var(--accent-color);
-            border-top: 1px solid transparent;
-            border-right: 1px solid transparent;
-            border-bottom: 1px solid transparent;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+            border-right: 1px solid rgba(255, 255, 255, 0.03);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
             transition: all 0.4s var(--transition-smooth);
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            background: var(--white);
-            border-color: #e2e8f0;
+            transform: translateY(-4px);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(168, 85, 247, 0.4);
             border-left-width: 5px;
-            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.05);
+            /* EFEITO LED GLOW COMPLETO NO CARD */
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 0 15px -2px var(--accent-glow);
         }
 
         .card h3 {
             margin-top: 0;
-            color: var(--primary-color);
+            color: #fff;
         }
 
-        /* EFEITO DE PREENCHIMENTO NOS LINKS */
+        /* EFEITO NEON NOS LINKS */
         .btn-link {
             display: inline-block;
             margin-top: 5px;
-            color: var(--accent-color);
+            color: #c084fc;
             text-decoration: none;
             font-weight: 600;
             position: relative;
             padding-bottom: 2px;
+            transition: color 0.3s ease;
         }
 
         .btn-link::after {
@@ -231,8 +241,13 @@
             bottom: 0;
             left: 0;
             background-color: var(--accent-color);
+            box-shadow: 0 0 8px var(--accent-color);
             transform-origin: bottom right;
             transition: transform 0.3s var(--transition-smooth);
+        }
+
+        .btn-link:hover {
+            color: #fff;
         }
 
         .btn-link:hover::after {
@@ -240,19 +255,26 @@
             transform-origin: bottom left;
         }
 
-        /* CONFIGURAÇÃO DE IMPRESSÃO */
+        /* CONFIGURAÇÃO DE IMPRESSÃO (REVERTE PARA FUNDO CLARO E LIMPO SE FOR SALVAR EM PDF) */
         @media print {
-            body { background: white !important; }
+            body { background: white !important; color: #24292e !important; }
             .progress-bar { display: none; }
-            .cv-container { margin: 0; padding: 0; box-shadow: none; max-width: 100%; animation: none !important; }
-            header h1 { color: #2c3e50 !important; }
-            header { border-bottom: 3px solid #6e5494 !important; }
-            h2 { border-bottom: 1px solid #ccc !important; }
-            h2:hover i { animation: none !important; }
+            .cv-container { margin: 0; padding: 0; box-shadow: none; max-width: 100%; animation: none !important; background: transparent !important; border: none !important; }
+            header h1 { color: #2c3e50 !important; text-shadow: none !important; }
+            header p.subtitle { color: #6e5494 !important; text-shadow: none !important; }
+            header { border-bottom: 3px solid #6e5494 !important; box-shadow: none !important; }
+            h2 { border-bottom: 1px solid #ccc !important; color: #2c3e50 !important; }
+            h2 i { color: #6e5494 !important; }
+            h2:hover i { animation: none !important; text-shadow: none !important; }
+            .item-header { color: #2c3e50 !important; }
+            .job-title { color: #6e5494 !important; }
             .badge { border: 1px solid #ccc !important; color: black !important; background: transparent !important; backdrop-filter: none !important; transform: none !important; box-shadow: none !important; }
-            .card { transform: none !important; box-shadow: none !important; background: transparent !important; border: 1px solid #ccc !important; border-left: 5px solid #6e5494 !important; }
+            .card { transform: none !important; box-shadow: none !important; background: transparent !important; border: 1px solid #ccc !important; border-left: 5px solid #6e5494 !important; color: #24292e !important; }
+            .card h3 { color: #2c3e50 !important; }
             .btn-link { color: #6e5494 !important; text-decoration: underline !important; }
             .btn-link::after { display: none; }
+            .contact-info a { color: #2c3e50 !important; }
+            small { color: #636e72 !important; }
             section { page-break-inside: avoid; }
             footer { display: none; }
         }
@@ -268,6 +290,7 @@
 </head>
 <body>
 
+<!-- Elemento da barra de progresso -->
 <div class="progress-bar" id="scrollProgress"></div>
 
 <div class="cv-container">
@@ -283,7 +306,7 @@
 
     <section>
         <h2><i class="fas fa-user-tie"></i> Resumo Profissional</h2>
-        <p>Sou um professional focado na automação de atividades e democratização da informação por meio do uso de 
+        <p>Sou um profissional focado na automação de atividades e democratização da informação por meio do uso de 
             tecnologias livres ou de baixo custo. Com uma visão estratégica moldada pelo Doutorado em Administração, 
             atuo na modernização do serviço público utilizando <b>Inteligência Artificial como força multiplicadora</b>. Desenvolvo automações com Python e Google Apps Script assistidas por IA para converter atividades burocráticas em soluções ágeis, transparentes e de alto impacto.</p>
     </section>
