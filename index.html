@@ -11,7 +11,7 @@
             --accent-color: #6e5494;
             --text-dark: #24292e;
             --text-muted: #636e72;
-            --bg-body: #f8fafc; /* Gradiente sutil em conjunto com o body */
+            --bg-body: #f8fafc;
             --white: #ffffff;
             --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -29,7 +29,7 @@
             background-attachment: fixed;
         }
 
-        /* 3. BARRA DE PROGRESSO DE LEITURA */
+        /* BARRA DE PROGRESSO DE LEITURA */
         .progress-bar {
             position: fixed;
             top: 0;
@@ -50,8 +50,6 @@
             border-radius: 12px;
             position: relative;
             overflow: hidden;
-            
-            /* 2. MICROANIMAÇÃO DE ENTRADA (SLIDE-UP) */
             animation: slideUp 0.8s var(--transition-smooth) forwards;
         }
 
@@ -125,7 +123,6 @@
             letter-spacing: 0.5px;
         }
 
-        /* 4. ANIMAÇÃO NOS ÍCONES */
         h2:hover i {
             animation: iconBounce 0.5s var(--transition-smooth);
             color: var(--primary-color);
@@ -159,7 +156,7 @@
             margin-bottom: 5px; 
         }
 
-        /* 3. GLASSMORPHISM NOS BADGES */
+        /* BADGES (Estilo unificado para Hard e Soft Skills) */
         .badge-grid { 
             display: flex; 
             flex-wrap: wrap; 
@@ -168,7 +165,7 @@
         }
         
         .badge {
-            background: rgba(240, 242, 245, 0.7);
+            background: rgba(240, 242, 245, 0.75);
             backdrop-filter: blur(4px);
             -webkit-backdrop-filter: blur(4px);
             color: var(--primary-color);
@@ -181,14 +178,14 @@
         }
 
         .badge:hover {
-            background: var(--accent-color);
-            color: white;
-            border-color: var(--accent-color);
+            background: var(--accent-color) !important; /* Força a cor padrão ao passar o mouse */
+            color: white !important;
+            border-color: var(--accent-color) !important;
             transform: translateY(-2px);
             box-shadow: 0 4px 10px rgba(110, 84, 148, 0.2);
         }
 
-        /* 1. CARDS DE PROJETOS INTERATIVOS */
+        /* CARDS DE PROJETOS INTERATIVOS */
         .card {
             background: #fafbfc;
             border-radius: 8px;
@@ -214,7 +211,7 @@
             color: var(--primary-color);
         }
 
-        /* 1. EFEITO DE PREENCHIMENTO FLUIDO NOS LINKS */
+        /* EFEITO DE PREENCHIMENTO NOS LINKS */
         .btn-link {
             display: inline-block;
             margin-top: 5px;
@@ -243,7 +240,7 @@
             transform-origin: bottom left;
         }
 
-        /* CONFIGURAÇÃO DE IMPRESSÃO (REMOVE OS EFEITOS ESPECIAIS) */
+        /* CONFIGURAÇÃO DE IMPRESSÃO */
         @media print {
             body { background: white !important; }
             .progress-bar { display: none; }
@@ -286,7 +283,7 @@
 
     <section>
         <h2><i class="fas fa-user-tie"></i> Resumo Profissional</h2>
-        <p>Sou um profissional focado na automação de atividades e democratização da informação por meio do uso de 
+        <p>Sou um professional focado na automação de atividades e democratização da informação por meio do uso de 
             tecnologias livres ou de baixo custo. Com uma visão estratégica moldada pelo Doutorado em Administração, 
             atuo na modernização do serviço público utilizando <b>Inteligência Artificial como força multiplicadora</b>. Desenvolvo automações com Python e Google Apps Script assistidas por IA para converter atividades burocráticas em soluções ágeis, transparentes e de alto impacto.</p>
     </section>
@@ -320,11 +317,11 @@
         <section style="margin-bottom: 0;">
             <h2 style="font-size: 1.1rem;"><i class="fas fa-users"></i> Soft Skills</h2>
             <div class="badge-grid" style="gap: 5px;">
-                <span class="badge" style="background: rgba(248, 249, 250, 0.75);">Resolução de Problemas</span>
-                <span class="badge" style="background: rgba(248, 249, 250, 0.75);">Pensamento Analítico</span>
-                <span class="badge" style="background: rgba(248, 249, 250, 0.75);">Adaptabilidade / IA</span>
-                <span class="badge" style="background: rgba(248, 249, 250, 0.75);">Liderança de Mudança</span>
-                <span class="badge" style="background: rgba(248, 249, 250, 0.75);">Eficiência Pública</span>
+                <span class="badge">Resolução de Problemas</span>
+                <span class="badge">Pensamento Analítico</span>
+                <span class="badge">Adaptabilidade / IA</span>
+                <span class="badge">Liderança de Mudança</span>
+                <span class="badge">Eficiência Pública</span>
             </div>
         </section>
 
@@ -429,7 +426,7 @@
         
         <div class="card">
             <h3>Portal do Conhecimento | PPGs - EFLCH</h3>
-            <p>O projeto foi implementado em abril de 2026 com o objetivo de organizar e disponibilizar, de forma estruturada, o conhecimento produzido pelos Programas de Pós-Graduação do campus Guarulhos. A solução utiliza dados provenientes de uma planilha Google, convertidos automaticamente para o formato JSON por meio do Google Apps Script com apenas um clique. Em seguida, os dados are enviados de forma automatizada para um repositório no GitHub e renderizados em interface web no formato de cards. Como principal diferencial, o projeto apresenta elevada facilidade de manutenção, além de oferecer rapidez no processamento e retorno dos filtros de busca, proporcionando uma experiência de navegação mais eficiente e dinâmica aos usuários.</p> 
+            <p>O projeto foi implementado em abril de 2026 com o objetivo de organizar e disponibilizar, de forma estruturada, o conhecimento produzido pelos Programas de Pós-Graduação do campus Guarulhos. A solução utiliza dados provenientes de uma planilha Google, convertidos automaticamente para o formato JSON por meio do Google Apps Script com apenas um clique. Em seguida, os dados são enviados de forma automatizada para um repositório no GitHub e renderizados em interface web no formato de cards. Como principal diferencial, o projeto apresenta elevada facilidade de manutenção, além de oferecer rapidez no processamento e retorno dos filtros de busca, proporcionando uma experiência de navigation mais eficiente e dinâmica aos usuários.</p> 
             <a href="https://mauriciooura-a11yke.github.io/ppgs-eflch/" class="btn-link" target="_blank">Acessar Portal →</a>
         </div>
 
@@ -439,9 +436,9 @@
             <a href="https://datastudio.google.com/u/0/reporting/2d004452-b28a-4809-bb74-dc3df62db6fc/page/p_gtv8qv5ckd" class="btn-link" target="_blank">Visualizar Painel de BI →</a>
         </div>
 
-        <div class="card">
+         <div class="card">
             <h3>Painel de divulgação de Agenda de Bancas</h3>
-            <p>O projeto foi implementado em maio de 2026 com o objetivo disponibilizar, de forma pública, no site do PPG em Educação, a sua agenda de bancas. Os dados são provenientes de uma planilha de controle que já era utilizada pela secretaria do PPGE. Os dados são atualizados automaticamente, conforme os agendamentos são validados na planilha. Dessa forma, os dados passaram a ser divulgados sem esforço adicional. Além de dar publicidade aos atos da secretaria, os alunos podem conferir a validação de suas solicitações de agendamento, assim como qualquer cidadão pode acompanhar as atividades do PPG.</p> 
+            <p>O projeto foi implementado em maio de 2026 com o objetivo disponibilizar, de forma pública, no site do PPG em Educação, a sua agenda de bancas. Os dados são provenientes de uma planilha de controle que já era utilizada pela secretaria do PPGE. Os dados são atualizados automaticamente, conforme os agendamentos são validados na planilha. Dessa forma, os dados passaram a ser divulgados sem espaço adicional. Além de dar publicidade aos atos da secretaria, os alunos podem conferir a validação de suas solicitações de agendamento, assim como qualquer cidadão pode acompanhar as atividades do PPG.</p> 
             <a href="https://datastudio.google.com/u/0/reporting/322acdc7-ed75-4c08-8a70-a9c9cbf9c33c/page/rUZxF" class="btn-link" target="_blank">Acessar o Painel →</a>
         </div>
     </section>
